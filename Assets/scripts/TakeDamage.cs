@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TakeDamage : Dragon
+public class TakeDamage : MonoBehaviour
 {
     
 

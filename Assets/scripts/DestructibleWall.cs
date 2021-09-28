@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructibleWall : MonoBehaviour, IDamageable
+public class DestructibleWall : MonoBehaviour
 {
-    public void TakeDamage(int amount)
-    {
-        Debug.Log("Wall has collapsed");
-    }
+   
 }

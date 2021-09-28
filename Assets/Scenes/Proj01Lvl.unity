@@ -335,7 +335,7 @@ Transform:
   m_GameObject: {fileID: 682928129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.8179, y: 5.8179, z: 5.8179}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -413,7 +413,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
+  m_BoundingSphereOverride: {x: 0, y: -7.331e-18, z: 1.03482323e+9, w: 1.5139813e-36}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -431,6 +431,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &831801685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831801687}
+  - component: {fileID: 831801686}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &831801686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831801685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632c1f6957017aa4c8bf048e396b0ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &831801687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831801685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9109082, y: 29.117409, z: -1.746926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 14.28, z: -0}
+  m_LocalPosition: {x: 0, y: 41.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -543,8 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206abf77105cddd4694e5ec3496dbcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dragon: {fileID: 1559844846}
-  _destructibleWall: {fileID: 0}
+  _dragon: {fileID: 0}
 --- !u!4 &1001786399
 Transform:
   m_ObjectHideFlags: 0
@@ -695,12 +737,13 @@ GameObject:
   - component: {fileID: 1559844847}
   - component: {fileID: 1559844846}
   - component: {fileID: 1559844851}
+  - component: {fileID: 1559844852}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 22
   m_IsActive: 1
 --- !u!114 &1559844846
 MonoBehaviour:
@@ -714,6 +757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30aa29166d599014797b00705a43bd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 1559844845}
+  damage: 5
 --- !u!65 &1559844847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -803,6 +848,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1559844852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559844845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d2d52bf1bd0b942bcb83b92849d32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &1688903628
 GameObject:
   m_ObjectHideFlags: 0

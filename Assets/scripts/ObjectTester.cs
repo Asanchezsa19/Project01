@@ -7,22 +7,20 @@ public class ObjectTester : MonoBehaviour
     [SerializeField]
     private Dragon _dragon;
 
-    [SerializeField] private DestructibleWall _destructibleWall;
+    //[SerializeField] private DestructibleWall _destructibleWall;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            DamageObject(_dragon);
+            health.DamageTaken(5);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            DamageObject(_dragon);
+            health.DamageTaken(5);
         }
+
     }
 
-    private void DamageObject(IDamageable damageable)
-    {
-        damageable.TakeDamage(5);
-    }
+    
 }
