@@ -1,45 +1,69 @@
-﻿using System.Collections;
+﻿
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class health : MonoBehaviour, IDamageable
-{
-  // private static Dragon enemy;
-
-    public static GameObject enemy;
-    //enemy.AddComponent<Rigidbody>();
-     public  static int CurrentHealth { get; private set; }
-    public int damage;
-    //private static int CurrentHealth;
-
-
-
-    public static void DamageTaken(int amount)
+    public class health : MonoBehaviour
     {
-        
-        CurrentHealth -= amount;
-        
+        public event Action<int> Damaged = delegate { };
+        public event Action<int> Healed = delegate { };
+        public event Action Killed = delegate { };
 
-    }
+
+    [SerializeField] int _startingHealth = 100;
+        public int StartingHealth => _startingHealth;
     
-    public int GetHealth()
-    {
-        return CurrentHealth;
-    }
 
-    public static void Kill(GameObject enemy)
-    {
+    [SerializeField] int _maxHealth = 100;
+        public int MaxHealth => _maxHealth;
+    
+
+    int _currentHealth;
+        public int CurrentHealth
+        {
+            get => _currentHealth;
+            set
+            {
+                
+                if (value > _maxHealth)
+                {
+                    value = _maxHealth;
+                }
+                _currentHealth = value;
+            }
+        }
+
+        private void Awake()
+        {
+            CurrentHealth = _startingHealth;
+        }
+
+        public void Heal(int amount)
+        {
+            CurrentHealth += amount;
+            Healed.Invoke(amount);
         
-        Destroy(enemy);
     }
 
-    public void TakeDamage(int damage)
-    {
-        int amount = 5;
-        damage = amount;
-
+        public void TakeDamage(int amount)
+        {
+            CurrentHealth -= amount;
+            Damaged.Invoke(amount);
         
+        Debug.Log("Health: " + CurrentHealth);
 
+        if (CurrentHealth <= 0)
+            {
+                Kill();
+            }
+        }
+
+        public void Kill()
+        {
+            Killed.Invoke();
+        
+            gameObject.SetActive(false);
+        }
     }
 
-}

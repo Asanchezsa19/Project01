@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Proj01Lvl.unity
+- path: Assets/SanchezAndrew_P01B_Final.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

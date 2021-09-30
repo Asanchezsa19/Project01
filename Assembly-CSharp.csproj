@@ -63,17 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scripts\AudioHelper.cs" />
     <Compile Include="Assets\scripts\destroyBullet.cs" />
-    <Compile Include="Assets\scripts\DestructibleWall.cs" />
     <Compile Include="Assets\scripts\Dragon.cs" />
     <Compile Include="Assets\scripts\GameController.cs" />
-    <Compile Include="Assets\scripts\GoldDragon.cs" />
     <Compile Include="Assets\scripts\health.cs" />
     <Compile Include="Assets\scripts\IDamageable.cs" />
-    <Compile Include="Assets\scripts\ObjectTester.cs" />
     <Compile Include="Assets\scripts\ShipController.cs" />
     <Compile Include="Assets\scripts\ShootBullet.cs" />
-    <Compile Include="Assets\scripts\TakeDamage.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/scripting2/Project01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

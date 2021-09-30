@@ -5,22 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneManager.LoadScene("Proj01Lvl");
+            SceneManager.LoadScene("SanchezAndrew_P01B_Final");
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
     }
+    
 }
